@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="play-ground">
+            <div class="icon">
+                <div class="left">
+                    <img src="pic.webp" height="60px" width="60px">
+                    <p>Word.</p>
+                </div>
+                <div class="right">
+                    <i class='bx bxs-home' ></i>
+                </div>
+            </div>
+            <div class="scoreboard">
+                <div class="setting">
+                    <img src="astronaut.webp" height="130px" width="130px">
+                    <div class="type">
+                        <p>Priority</p>
+                        <div class="choice">
+                            <span class="prev-type"><</span>
+                            <span class="pri-type">All</span>
+                            <span class="next-type">></span>
+                        </div>
+                    </div>
+                    <div class="type">
+                        <p>Time Range</p>
+                        <div class="range">
+                            <div class="choice">
+                                <span class="prev-start-date"><</span>
+                                <span class="start-date"></span>
+                                <span class="next-start-date">></span>
+                            </div>
+                            <span>~</span>
+                            <div class="choice">
+                                <span class="prev-end-date"><</span>
+                                <span class="end-date">Oct 27 2024</span>
+                                <span class="next-end-date">></span>
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="gameSetting()" class="start">GAME START!</button>
+                </div>
+                <div class="game">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="add-card">
+                <i class='bx bx-plus'></i>
+                <p>Add a word here!</p>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search a word!" class="search_input">
+                <i class='bx bx-search-alt-2' ></i>
+            </div>
+            <div class="card-aggregate">
+            </div>
+        </div>
+    </div>
+    <div class="back-effet">
+        <div class="addvocab-form">
+            <!-- <i class='bx bxs-star' ></i> -->
+            <i class='bx bx-x'></i>
+            <div class="form">
+                <p class="warning-explain">*Please complete all the hightlighted column</p>
+                <div class="input-group">
+                    <label class="short">New Word</label>
+                    <input type="text" class="new_word" id="wordid">
+                </div>
+                <div class="input-group">
+                    <label class="short">Definition</label>
+                    <input type="text" class="def" id="defid">
+                </div>
+                <div class="input-group">
+                    <label class="long">For Example</label>
+                    <textarea class="ex" id="exid"></textarea>
+                </div>
+                <div class="priority">
+                    <button class="important select">Important</button>
+                    <button class="normal">Normal</button>
+                    <button class="trivial">Trivial</button>
+                </div>
+            </div>
+            <div class="sub">
+                <button type="submit" class="submit-btn">Add</button>
+            </div>
+        </div>
+    </div>
+   
+<script src="game.js"></script>    
+</body>
+</html>
