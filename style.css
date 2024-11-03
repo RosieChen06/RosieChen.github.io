@@ -822,8 +822,11 @@ textarea{
 }
 
 @media (max-width:400px){
+
     .indicator-m p{
         font-size: 24px;
+        top:10px;
+        letter-spacing: 0px;
     }
 }
 
