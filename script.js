@@ -205,7 +205,10 @@ const vocab_cnt_ttl = document.querySelector(".vocab_cnt_ttl");
 let progress = setInterval(()=>{
     start_value++;
     vocab_cnt_ttl.textContent=`${start_value}`;
-    if(start_value == cards.length){
+    if(cards.length===0){
+        vocab_cnt_ttl.textContent=0;
+    }
+    else if(start_value == cards.length){
         clearInterval(progress);
     }
 }, 35)
@@ -232,10 +235,15 @@ function getTodayCnt(){
         return card.date===today
     })
 
+    console.log(todayarray);
+
     let second_progress = setInterval(()=>{
         second_start_value++;
         vocab_cnt_today.textContent=`${second_start_value}`;
-        if(second_start_value == todayarray.length){
+        if(todayarray.length===0){
+            vocab_cnt_today.textContent=0;
+        }
+        else if(second_start_value == todayarray.length){
             clearInterval(second_progress);
         }
     }, 35)
