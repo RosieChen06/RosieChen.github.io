@@ -25,8 +25,8 @@ const game = document.querySelector(".game");
 function gameSetting(){
 
     let library = cards.filter((card)=>{
-        return (type.innerHTML==="All")? new Date(Date.parse(card.date))>=new Date(Date.parse(start_date.innerHTML)) && new Date(Date.parse(card.date))<=new Date(Date.parse(end_date.innerHTML)):
-        new Date(Date.parse(card.date))>=new Date(Date.parse(start_date.innerHTML)) && new Date(Date.parse(card.date))<=new Date(Date.parse(end_date.innerHTML)) && card.priority === type.textContent.toLowerCase()
+        return type.innerHTML==="All"? new Date(Date.parse(card.date))>=new Date(Date.parse(start_date.textContent)) && new Date(Date.parse(card.date))<=new Date(Date.parse(end_date.textContent)):
+        new Date(Date.parse(card.date))>=new Date(Date.parse(start_date.textContent)) && new Date(Date.parse(card.date))<=new Date(Date.parse(end_date.textContent)) && card.priority === type.textContent.toLowerCase()
     })
 
     if(library.length>=10){
@@ -60,7 +60,6 @@ function gameSetting(){
             `;
             game.appendChild(newarea);
     }else{
-        console.log("true");
         game.innerHTML='';
         const newarea = document.createElement('div');
         newarea.className="lock-img";
@@ -119,7 +118,7 @@ prev_start_date.addEventListener('click',()=>{
     let new_start_date = new Date(Date.parse(i)-1);
     // console.log(new Date(new_start_date));
 
-    if(new_start_date<=new Date(Date.parse(cards[0].date))){
+    if(new_start_date<=new Date(Date.parse(min_date))){
         return
     }
 
@@ -168,7 +167,7 @@ next_end_date.addEventListener('click',()=>{
     let new_end_date = new Date(Date.parse(i));
     let t = new Date(new_end_date.setDate(new_end_date.getDate()+1));
 
-    if(new_end_date>new Date(Date.parse(cards[parseInt(cards.length)-1].date))){
+    if(new_end_date>new Date(Date.parse(max_date))){
         return
     }
 
