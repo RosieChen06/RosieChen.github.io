@@ -821,6 +821,12 @@ textarea{
     }
 }
 
+@media (max-width:400px){
+    .indicator-m p{
+        font-size: 24px;
+    }
+}
+
 
 
 
